@@ -1,0 +1,55 @@
+name: "scheduled"
+on:
+  workflow_dispatch:
+  # run this every night to make sure nothing breaks
+  schedule:
+    - cron: "0 0 * * *"
+
+# cancel the job if a newer pipeline starts for the same MR or branch
+concurrency:
+  group: scheduled-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-maven-java:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./maven-example
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java and Maven
+        uses: actions/setup-java@v4
+        with:
+          java-version: "23"
+          distribution: "zulu"
+
+      - name: Run Tests
+        run: mvn clean test
+
+      - name: Package
+        run: mvn clean package
+
+      - name: Run
+        run: java -Djava.library.path=target/natives/linux/x64 -cp target/maven-example-1.0-SNAPSHOT-jar-with-dependencies.jar com.example.App
+
+  run-gradle-java:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./gradle-java
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java and Maven
+        uses: actions/setup-java@v4
+        with:
+          java-version: "23"
+          distribution: "zulu"
+
+      - name: Run Tests
+        run: ./gradlew test
+
+      - name: Run Main
+        run: ./gradlew run

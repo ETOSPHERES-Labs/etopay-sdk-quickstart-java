@@ -13,10 +13,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.application.ui.theme.ApplicationTheme
 
+import com.cawaena.Wallet;
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+		val w = Wallet()
+		try {
+			println(w.getBuildInfo())
+		} catch (e: Exception) {
+			e.printStackTrace()
+		}
+
         setContent {
             ApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

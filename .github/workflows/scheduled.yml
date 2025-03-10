@@ -29,6 +29,7 @@ jobs:
         with:
           java-version: "23"
           distribution: "zulu"
+          cache: 'maven'
 
       - name: Run Tests
         run: mvn clean test
@@ -52,6 +53,7 @@ jobs:
         with:
           java-version: "23"
           distribution: "zulu"
+          cache: 'maven'
 
       - name: Run Tests
         run: ./gradlew --no-daemon test
@@ -67,11 +69,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java and Maven
+      - name: Set up Java and Gradle
         uses: actions/setup-java@v4
         with:
           java-version: "23"
           distribution: "zulu"
+          cache: 'gradle'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3

@@ -6,8 +6,19 @@ import com.cawaena.Wallet;
  * Hello world!
  */
 public class App {
-    public static void main(String[] args) {
+	public String getBuildInfo() {
 		Wallet w = new Wallet();
-        System.out.println("Hello World!");
-    }
+		try {
+			return w.getBuildInfo();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public static void main(String[] args) throws Exception {
+		App app = new App();
+		System.out.println(app.getBuildInfo());
+	}
+
 }

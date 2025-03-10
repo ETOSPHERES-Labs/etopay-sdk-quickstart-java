@@ -83,10 +83,10 @@
                   <groupId>com.cawaena</groupId>
                   <artifactId>wallet</artifactId>
                   <!-- Select the binaries using the correct classifier tag -->
-                  <classifier>native-linux-x86_64</classifier>
+                  <classifier>natives-linux</classifier>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${project.build.directory}/native-libs</outputDirectory>
+                  <outputDirectory>${project.build.directory}/natives</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -99,7 +99,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
-          <argLine>-Djava.library.path=${project.build.directory}/native-libs/wallet-0.14.0-SNAPSHOT/native/x86_64/linux</argLine>
+			<argLine>-Djava.library.path=${project.build.directory}/natives/linux/x64</argLine>
         </configuration>
       </plugin>
 

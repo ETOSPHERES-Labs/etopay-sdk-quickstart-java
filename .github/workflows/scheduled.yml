@@ -54,7 +54,28 @@ jobs:
           distribution: "zulu"
 
       - name: Run Tests
-        run: ./gradlew test
+        run: ./gradlew --no-daemon test
 
       - name: Run Main
-        run: ./gradlew run
+        run: ./gradlew --no-daemon run
+
+  run-gradle-android:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./gradle-android
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java and Maven
+        uses: actions/setup-java@v4
+        with:
+          java-version: "23"
+          distribution: "zulu"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build
+        run: ./gradlew --no-daemon build
+

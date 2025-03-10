@@ -3,12 +3,22 @@
  */
 package org.example;
 
+
+import com.cawaena.Wallet;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public String getBuildInfo() {
+		Wallet w = new Wallet();
+		try {
+			return w.getBuildInfo();
+		} catch (Exception e ){
+			e.printStackTrace();
+			return null;
+		}
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) throws Exception{
+		App app = new App();
+        System.out.println(app.getBuildInfo());
     }
 }

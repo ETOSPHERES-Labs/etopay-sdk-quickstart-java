@@ -8,6 +8,8 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 
+import com.cawaena.Wallet;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -21,4 +23,11 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.example.application", appContext.packageName)
     }
+
+	// this needs to run on the Android Device since it uses the native libraries
+	@Test
+	fun canGetBuildInfo() {
+		val w = Wallet()
+		println(w.getBuildInfo())
+	}
 }

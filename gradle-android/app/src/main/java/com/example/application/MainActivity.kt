@@ -20,18 +20,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-		val w = Wallet()
-		try {
-			println(w.getBuildInfo())
-		} catch (e: Exception) {
-			e.printStackTrace()
-		}
+        val w = Wallet()
+        val info = w.getBuildInfo()
 
         setContent {
             ApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = info,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

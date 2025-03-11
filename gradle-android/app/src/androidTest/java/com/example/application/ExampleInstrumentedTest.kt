@@ -1,0 +1,33 @@
+package com.example.application
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+import com.cawaena.Wallet;
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.application", appContext.packageName)
+    }
+
+	// this needs to run on the Android Device since it uses the native libraries
+	@Test
+	fun canGetBuildInfo() {
+		val w = Wallet()
+		println(w.getBuildInfo())
+	}
+}

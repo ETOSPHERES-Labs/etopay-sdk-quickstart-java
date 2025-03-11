@@ -1,9 +1,14 @@
 name: "scheduled"
 on:
+  # allow manually triggering
   workflow_dispatch:
+
   # run this every night to make sure nothing breaks
   schedule:
     - cron: "0 0 * * *"
+
+  # run on push to any branch
+  push:
 
 # cancel the job if a newer pipeline starts for the same MR or branch
 concurrency:
@@ -24,6 +29,7 @@ jobs:
         with:
           java-version: "23"
           distribution: "zulu"
+          cache: 'maven'
 
       - name: Run Tests
         run: mvn clean test
@@ -47,9 +53,32 @@ jobs:
         with:
           java-version: "23"
           distribution: "zulu"
+          cache: 'maven'
 
       - name: Run Tests
-        run: ./gradlew test
+        run: ./gradlew --no-daemon test
 
       - name: Run Main
-        run: ./gradlew run
+        run: ./gradlew --no-daemon run
+
+  run-gradle-android:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./gradle-android
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java and Gradle
+        uses: actions/setup-java@v4
+        with:
+          java-version: "23"
+          distribution: "zulu"
+          cache: 'gradle'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build
+        run: ./gradlew --no-daemon build
+

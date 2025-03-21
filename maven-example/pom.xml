@@ -27,10 +27,10 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- Add cawaena wallet dependency for compilation -->
+    <!-- Add etopay sdk dependency for compilation -->
     <dependency>
-      <groupId>com.cawaena</groupId>
-      <artifactId>wallet</artifactId>
+      <groupId>com.etospheres.etopay</groupId>
+      <artifactId>etopaysdk</artifactId>
       <scope>compile</scope>
       <version>0.14.0-SNAPSHOT</version>
     </dependency>
@@ -80,8 +80,8 @@
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>com.cawaena</groupId>
-                  <artifactId>wallet</artifactId>
+                  <groupId>com.etospheres.etopay</groupId>
+                  <artifactId>etopaysdk</artifactId>
                   <!-- Select the binaries using the correct classifier tag -->
                   <classifier>natives-linux</classifier>
                   <type>jar</type>

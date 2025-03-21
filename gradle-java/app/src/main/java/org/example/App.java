@@ -4,11 +4,11 @@
 package org.example;
 
 
-import com.cawaena.Wallet;
+import com.etospheres.etopay.ETOPaySdk;
 
 public class App {
     public String getBuildInfo() {
-		Wallet w = new Wallet();
+		ETOPaySdk w = new ETOPaySdk();
 		try {
 			return w.getBuildInfo();
 		} catch (Exception e ){

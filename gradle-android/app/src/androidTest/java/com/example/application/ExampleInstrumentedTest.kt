@@ -8,7 +8,7 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 
-import com.cawaena.Wallet;
+import com.etospheres.etopay.ETOPaySdk;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -27,7 +27,7 @@ class ExampleInstrumentedTest {
 	// this needs to run on the Android Device since it uses the native libraries
 	@Test
 	fun canGetBuildInfo() {
-		val w = Wallet()
+		val w = ETOPaySdk()
 		println(w.getBuildInfo())
 	}
 }

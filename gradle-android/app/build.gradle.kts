@@ -44,8 +44,8 @@ android {
 
 dependencies {
 
-    implementation(libs.wallet)
-    natives(variantOf(libs.wallet) { classifier("natives-android") })
+    implementation(libs.etopaysdk)
+    natives(variantOf(libs.etopaysdk) { classifier("natives-android") })
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

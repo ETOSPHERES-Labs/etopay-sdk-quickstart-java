@@ -1,13 +1,13 @@
 package com.example;
 
-import com.cawaena.Wallet;
+import com.etospheres.etopay.ETOPaySdk;
 
 /**
  * Hello world!
  */
 public class App {
 	public String getBuildInfo() {
-		Wallet w = new Wallet();
+		ETOPaySdk w = new ETOPaySdk();
 		try {
 			return w.getBuildInfo();
 		} catch (Exception e) {

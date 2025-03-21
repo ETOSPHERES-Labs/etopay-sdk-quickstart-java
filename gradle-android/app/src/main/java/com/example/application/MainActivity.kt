@@ -13,14 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.application.ui.theme.ApplicationTheme
 
-import com.cawaena.Wallet;
+import com.etospheres.etopay.ETOPaySdk;
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val w = Wallet()
+        val w = ETOPaySdk()
         val info = w.getBuildInfo()
 
         setContent {

@@ -2,6 +2,17 @@
 
 This repository contains three quickstart examples on how to integrate the [ETOPay SDK](https://github.com/ETOSPHERES-Labs/etopay-sdk) into your [Java](#native-java) or [Android](#android) project.
 
+## Minimum Version Support
+
+The following versions of the toolchain are used to build and compile the Java SDK and should be used as minimum versions for integrating the SDK. Versions lower than the mentioned might work, however are not guaranteed by the team. In case of issues, please contact the team with specific build or compile errors.
+
+- **Java Compiler**: `23.0.2`
+- **gradle**: `Gradle 8.13`
+- **Android SDK Command-line Tools**:  `12.0`
+- **Android SDK Platform**: `Android SDK Platform 33`
+- **Android API Level**: `33`
+- **Android NDK**: `26.3.11579264` (`r26d`)
+- **Android Build Tools**: `34.0.0`
 
 ## Native Java
 

@@ -1,5 +1,7 @@
 # ETOPay SDK Java Quickstart
 
+[![ci](https://github.com/ETOSPHERES-Labs/etopay-sdk-quickstart-java/actions/workflows/ci.yml/badge.svg)](https://github.com/ETOSPHERES-Labs/etopay-sdk-quickstart-java/actions/workflows/ci.yml)
+
 This repository contains three quickstart examples on how to integrate the [ETOPay SDK](https://github.com/ETOSPHERES-Labs/etopay-sdk) into your [Java](#native-java) or [Android](#android) project.
 
 ## Minimum Version Support

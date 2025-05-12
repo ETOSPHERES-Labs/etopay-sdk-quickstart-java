@@ -37,8 +37,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // This dependency is used by the application.
-	implementation 'com.etospheres.etopay:etopaysdk:0.14.2-SNAPSHOT'
-	natives 'com.etospheres.etopay:etopaysdk:0.14.2-SNAPSHOT:natives-linux'
+	implementation 'com.etospheres.etopay:etopaysdk:0.15.0'
+	natives 'com.etospheres.etopay:etopaysdk:0.15.0:natives-linux'
 }
 
 task unzipNatives(type: Copy) {

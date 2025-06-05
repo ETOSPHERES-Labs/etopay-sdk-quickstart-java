@@ -30,7 +30,7 @@ To use the SDK with Maven add the following to your `pom.xml` to add the SDK as 
     <groupId>com.etospheres.etopay</groupId>
     <artifactId>etopaysdk</artifactId>
     <scope>compile</scope>
-    <version>0.15.0</version>
+    <version>0.16.0</version>
   </dependency>
   ...
 </dependencies>
@@ -140,8 +140,8 @@ dependencies {
     // <Other dependencies here>
    
     // This dependency is used by the application.
-	implementation 'com.etospheres.etopay:etopaysdk:0.15.0'
-	natives 'com.etospheres.etopay:etopaysdk:0.15.0:natives-linux'
+	implementation 'com.etospheres.etopay:etopaysdk:0.16.0'
+	natives 'com.etospheres.etopay:etopaysdk:0.16.0:natives-linux'
 }
 
 // Task that will automatically unzip the file added to the natives configuration
@@ -183,7 +183,7 @@ For Android, we are currently packaging native libraries for the `armeabi-v7a`, 
 In you Android Studio project, add the version of the SDK you want to use to your `libs.versions.toml`:
 ```toml
 [versions]
-etopaysdk = "0.15.0"
+etopaysdk = "0.16.0"
 
 [libraries]
 etopaysdk = { group = "com.etospheres.etopay", name = "etopaysdk", version.ref = "etopaysdk" }

@@ -30,7 +30,7 @@ To use the SDK with Maven add the following to your `pom.xml` to add the SDK as 
     <groupId>com.etospheres.etopay</groupId>
     <artifactId>etopaysdk</artifactId>
     <scope>compile</scope>
-    <version>0.16.0</version>
+    <version>0.16.1</version>
   </dependency>
   ...
 </dependencies>
